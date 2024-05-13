@@ -21,15 +21,15 @@ def add_transaction():
                 transaction = {
                         'id': len(transactions) + 1,
                         'date': request.form['date'],
-                        'amount': float(request.form['amount])
+                        'amount': float(request.form['amount'])
                         }
 #Append new transaction
                 transactions.append(transaction)
 #redirect to the transactions list page
-return redirect(urel_for("get_transactions"))
+                return redirect(urel_for("get_transactions"))
 
 #Render the form template to display the add transaction form
-return render_template("form.html")
+        return render_template("form.html")
 
 # Update operation
 
@@ -68,5 +68,5 @@ def delete_transaction(transaction_id):
     # Redirect to the transactions list page
     return redirect(url_for("get_transactions"))
     # Run the Flask app
-if __name__ == "__main__"
+if __name__ == "__main__":
         app.run(debug=True)
